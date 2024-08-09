@@ -105,9 +105,9 @@ class _AppointmentPageViewState extends State<AppointmentPageView> {
               ),
             ),
             const SizedBox(height: 16),
-            Text(
+            const Text(
               '*No slots available',
-              style: const TextStyle(
+              style: TextStyle(
                 color: Colors.red,
                 fontSize: 16,
                 fontWeight: FontWeight.bold,

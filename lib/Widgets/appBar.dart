@@ -49,7 +49,7 @@ PreferredSizeWidget appBarHome(
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: CommonTextField(
-                      suffixIcon: Icon(
+                      suffixIcon: const Icon(
                         Icons.search_rounded,
                       ),
                       onClickButton: (val) {},
@@ -57,7 +57,7 @@ PreferredSizeWidget appBarHome(
                   ),
                   IconButton(
                     onPressed: () {},
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.filter_alt_outlined,
                       size: 28,
                       color: Colors.white,

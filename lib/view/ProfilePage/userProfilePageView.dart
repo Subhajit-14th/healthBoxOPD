@@ -187,7 +187,7 @@ class _UserProfilePageViewState extends State<UserProfilePageView> {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.84,
                   child: TabBarView(
-                    physics: NeverScrollableScrollPhysics(),
+                    physics: const NeverScrollableScrollPhysics(),
                     children: [
                       const ProfileDashBoardPageView(),
                       const ProfileSettingsPageView(),

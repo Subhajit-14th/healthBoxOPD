@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:health_box_opd/Widgets/commonButton.dart';
 import 'package:health_box_opd/Widgets/commonTextField.dart';
-import 'package:health_box_opd/model/openTicketsModel.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path/path.dart' as path;
 
@@ -16,7 +15,7 @@ class OpenTicketsDialogPageView extends StatefulWidget {
 }
 
 class _OpenTicketsDialogPageViewState extends State<OpenTicketsDialogPageView> {
-  TextEditingController _describeIssueController = TextEditingController();
+  final TextEditingController _describeIssueController = TextEditingController();
   final ImagePicker _picker = ImagePicker();
   String _uploadIssueImage = 'No file chosen';
 

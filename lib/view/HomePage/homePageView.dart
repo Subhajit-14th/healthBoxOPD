@@ -109,9 +109,9 @@ class _HomePageViewState extends State<HomePageView> {
     },
   ];
 
-  TextEditingController _doctorSearchController = TextEditingController();
-  TextEditingController _departmentSearchController = TextEditingController();
-  TextEditingController _selectSpecialitySearchController =
+  final TextEditingController _doctorSearchController = TextEditingController();
+  final TextEditingController _departmentSearchController = TextEditingController();
+  final TextEditingController _selectSpecialitySearchController =
   TextEditingController();
 
   // Sample list of specialities
@@ -302,7 +302,7 @@ class _HomePageViewState extends State<HomePageView> {
                                   return ListTile(
                                     title: Text(
                                       suggestion,
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         color: Colors.black,
                                       ),
                                     ),

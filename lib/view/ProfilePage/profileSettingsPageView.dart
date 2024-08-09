@@ -14,12 +14,12 @@ class ProfileSettingsPageView extends StatefulWidget {
 }
 
 class _ProfileSettingsPageViewState extends State<ProfileSettingsPageView> {
-  TextEditingController _fullNameController = TextEditingController();
-  TextEditingController _emailIdController = TextEditingController();
-  TextEditingController _dateOfBirthController = TextEditingController();
-  TextEditingController _bloodGroupController = TextEditingController();
-  TextEditingController _genderController = TextEditingController();
-  TextEditingController _mobileController = TextEditingController();
+  final TextEditingController _fullNameController = TextEditingController();
+  final TextEditingController _emailIdController = TextEditingController();
+  final TextEditingController _dateOfBirthController = TextEditingController();
+  final TextEditingController _bloodGroupController = TextEditingController();
+  final TextEditingController _genderController = TextEditingController();
+  final TextEditingController _mobileController = TextEditingController();
 
   String selectedDate = DateFormat('dd/MM/yyyy').format(DateTime.now());
 

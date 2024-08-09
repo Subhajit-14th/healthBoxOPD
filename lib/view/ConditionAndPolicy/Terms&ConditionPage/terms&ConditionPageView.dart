@@ -4,25 +4,55 @@ import 'package:flutter/services.dart';
 import 'package:health_box_opd/Common/appColor.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class TermsAndContidionPageView extends StatefulWidget {
-  const TermsAndContidionPageView({super.key});
+class TermsAndConditionPageView extends StatefulWidget {
+  const TermsAndConditionPageView({super.key});
 
   @override
-  State<TermsAndContidionPageView> createState() => _TermsAndContidionPageViewState();
+  State<TermsAndConditionPageView> createState() =>
+      _TermsAndConditionPageViewState();
 }
 
-class _TermsAndContidionPageViewState extends State<TermsAndContidionPageView> {
+class _TermsAndConditionPageViewState extends State<TermsAndConditionPageView> {
+  late WebViewController controller;
 
   @override
   void initState() {
     super.initState();
-    // Enable hybrid composition (recommended for Android WebView)
-    if (Platform.isAndroid) {
-      WebView.platform = SurfaceAndroidWebView();
-    }
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: AppColor.appThemeColor, // Set this to light
-    ));
+
+    // Initialize the WebViewController
+    controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..setBackgroundColor(const Color(0x00000000))
+      ..setNavigationDelegate(
+        NavigationDelegate(
+          onProgress: (int progress) {
+            // Update loading bar or show loading indicator
+          },
+          onPageStarted: (String url) {},
+          onPageFinished: (String url) {},
+          onHttpError: (HttpResponseError error) {
+            // Handle HTTP errors
+          },
+          onWebResourceError: (WebResourceError error) {
+            // Handle Web resource errors
+          },
+          onNavigationRequest: (NavigationRequest request) {
+            if (request.url.startsWith('https://www.youtube.com/')) {
+              return NavigationDecision
+                  .prevent; // Prevent navigation to YouTube
+            }
+            return NavigationDecision.navigate;
+          },
+        ),
+      )
+      ..loadRequest(Uri.parse('https://healthboxopd.com/terms-and-conditions'));
+
+    // Set the status bar color
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        statusBarColor: AppColor.appThemeColor,
+      ),
+    );
   }
 
   @override
@@ -41,10 +71,7 @@ class _TermsAndContidionPageViewState extends State<TermsAndContidionPageView> {
           ),
         ),
       ),
-      body: const WebView(
-        initialUrl: 'https://healthboxopd.com/terms-and-conditions',
-        javascriptMode: JavascriptMode.unrestricted,
-      ),
+      body: WebViewWidget(controller: controller),
     );
   }
 }

@@ -274,7 +274,7 @@ class _RootScreenState extends State<RootScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const TermsAndContidionPageView(),
+                      builder: (context) => const TermsAndConditionPageView(),
                     ),
                   );
                   setState(() {});
@@ -287,7 +287,7 @@ class _RootScreenState extends State<RootScreen> {
 
               /// Profile Image
               ListTile(
-                leading:  Icon(
+                leading: const Icon(
                   Icons.person_2_outlined,
                   color: Colors.white,
                 ),

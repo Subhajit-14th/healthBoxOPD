@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:health_box_opd/Common/appColor.dart';
 import 'package:health_box_opd/Widgets/commonButton.dart';
 import 'package:health_box_opd/Widgets/star_rating.dart';

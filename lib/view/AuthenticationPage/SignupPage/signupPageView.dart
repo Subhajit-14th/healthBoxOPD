@@ -6,7 +6,6 @@ import 'package:health_box_opd/Widgets/commonButton.dart';
 import 'package:health_box_opd/Widgets/commonTextField.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
-import 'package:path/path.dart' as path;
 
 class SingupPageView extends StatefulWidget {
   const SingupPageView({super.key});
@@ -16,12 +15,12 @@ class SingupPageView extends StatefulWidget {
 }
 
 class _SingupPageViewState extends State<SingupPageView> {
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
-  TextEditingController _nameController = TextEditingController();
-  TextEditingController _phoneNumberController = TextEditingController();
-  TextEditingController _bloodGroupController = TextEditingController();
-  TextEditingController _genderController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _phoneNumberController = TextEditingController();
+  final TextEditingController _bloodGroupController = TextEditingController();
+  final TextEditingController _genderController = TextEditingController();
   ValueNotifier<bool> isPasswordVisible = ValueNotifier<bool>(false);
 
   String selectedDate = 'Date of Brith';
@@ -29,7 +28,7 @@ class _SingupPageViewState extends State<SingupPageView> {
   final ImagePicker _picker = ImagePicker();
   String _uploadProfileImage = 'No file chosen';
   String _uploadAdharPanImage = 'No file chosen';
-  String _imageName = '';
+  final String _imageName = '';
 
   static const platform = MethodChannel('com.healthbox.opd/path');
 

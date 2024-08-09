@@ -63,7 +63,7 @@ class _SearchPageViewState extends State<SearchPageView> {
             height: 60,
             width: double.infinity,
             color: const Color(0xFF15558d),
-            padding: EdgeInsets.only(left: 16, right: 16,top: 4),
+            padding: const EdgeInsets.only(left: 16, right: 16,top: 4),
             child: Text(
               '3 matches found for : ${widget.specialist} In ${widget.placeName}',
               style: const TextStyle(

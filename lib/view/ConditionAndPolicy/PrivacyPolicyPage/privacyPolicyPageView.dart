@@ -12,13 +12,41 @@ class PrivacyPolicyPageView extends StatefulWidget {
 }
 
 class _PrivacyPolicyPageViewState extends State<PrivacyPolicyPageView> {
+  late WebViewController controller;
+
   @override
   void initState() {
     super.initState();
-    // Enable hybrid composition (recommended for Android WebView)
-    if (Platform.isAndroid) {
-      WebView.platform = SurfaceAndroidWebView();
-    }
+
+    // Initialize the WebViewController
+    controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..setBackgroundColor(const Color(0x00000000))
+      ..setNavigationDelegate(
+        NavigationDelegate(
+          onProgress: (int progress) {
+            // Update loading bar or show loading indicator
+          },
+          onPageStarted: (String url) {},
+          onPageFinished: (String url) {},
+          onHttpError: (HttpResponseError error) {
+            // Handle HTTP errors
+          },
+          onWebResourceError: (WebResourceError error) {
+            // Handle Web resource errors
+          },
+          onNavigationRequest: (NavigationRequest request) {
+            if (request.url.startsWith('https://www.youtube.com/')) {
+              return NavigationDecision
+                  .prevent; // Prevent navigation to YouTube
+            }
+            return NavigationDecision.navigate;
+          },
+        ),
+      )
+      ..loadRequest(Uri.parse('https://healthboxopd.com/privacy-policy'));
+
+    // Set the status bar color
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(
         statusBarColor: AppColor.appThemeColor,
@@ -42,10 +70,7 @@ class _PrivacyPolicyPageViewState extends State<PrivacyPolicyPageView> {
           ),
         ),
       ),
-      body: const WebView(
-        initialUrl: 'https://healthboxopd.com/privacy-policy',
-        javascriptMode: JavascriptMode.unrestricted,
-      ),
+      body: WebViewWidget(controller: controller),
     );
   }
 }
