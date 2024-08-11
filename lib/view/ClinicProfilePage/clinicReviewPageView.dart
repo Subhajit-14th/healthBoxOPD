@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:health_box_opd/Widgets/commonButton.dart';
+import 'package:health_box_opd/widgets/commonButton.dart';
 import 'package:health_box_opd/view/ClinicProfilePage/ClinicReviewPage/clinicReviewWidgetView.dart';
 
 class ClinicReviewPageView extends StatefulWidget {
@@ -19,7 +19,7 @@ class _ClinicReviewPageViewState extends State<ClinicReviewPageView> {
     return isLogin
         ? Container()
         : Container(
-      margin: const EdgeInsets.only(top: 16, left: 24, right: 24),
+            margin: const EdgeInsets.only(top: 16, left: 24, right: 24),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

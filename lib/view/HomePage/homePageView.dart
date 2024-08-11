@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:health_box_opd/Common/appColor.dart';
-import 'package:health_box_opd/Common/commonFun.dart';
-import 'package:health_box_opd/Widgets/commonButton.dart';
-import 'package:health_box_opd/Widgets/commonTextField.dart';
-import 'package:health_box_opd/Widgets/specialitiesWidget.dart';
-import 'package:health_box_opd/Widgets/topDoctorWidget.dart';
-import 'package:health_box_opd/model/topDoctorDummyModel.dart';
+import 'package:health_box_opd/utils/appColor.dart';
+import 'package:health_box_opd/utils/commonFun.dart';
+import 'package:health_box_opd/widgets/commonButton.dart';
+import 'package:health_box_opd/widgets/commonTextField.dart';
+import 'package:health_box_opd/widgets/specialitiesWidget.dart';
+import 'package:health_box_opd/widgets/topDoctorWidget.dart';
+import 'package:health_box_opd/models/topDoctorDummyModel.dart';
 import 'package:health_box_opd/view/SearchPage/searchPageView.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 
@@ -22,7 +22,7 @@ class _HomePageViewState extends State<HomePageView> {
   List<TopDoctorModel> doctorDetails = [
     TopDoctorModel(
       image:
-      'https://media.istockphoto.com/id/177373093/photo/indian-male-doctor.jpg?s=612x612&w=0&k=20&c=5FkfKdCYERkAg65cQtdqeO_D0JMv6vrEdPw3mX1Lkfg=',
+          'https://media.istockphoto.com/id/177373093/photo/indian-male-doctor.jpg?s=612x612&w=0&k=20&c=5FkfKdCYERkAg65cQtdqeO_D0JMv6vrEdPw3mX1Lkfg=',
       doctorName: 'Darren Elder',
       doctorSpecialist: 'Surgery',
       rating: '4.0',
@@ -31,7 +31,7 @@ class _HomePageViewState extends State<HomePageView> {
     ),
     TopDoctorModel(
       image:
-      'https://i.pinimg.com/736x/b9/97/a5/b997a530822d0f2c03259070d4590d45.jpg',
+          'https://i.pinimg.com/736x/b9/97/a5/b997a530822d0f2c03259070d4590d45.jpg',
       doctorName: 'Ruby Perrin',
       doctorSpecialist: 'Cardiologist',
       rating: '5.0',
@@ -40,7 +40,7 @@ class _HomePageViewState extends State<HomePageView> {
     ),
     TopDoctorModel(
       image:
-      'https://t3.ftcdn.net/jpg/06/48/69/42/360_F_648694278_haC94bdL26EedqLMIbMpLACqzxwuvq4f.jpg',
+          'https://t3.ftcdn.net/jpg/06/48/69/42/360_F_648694278_haC94bdL26EedqLMIbMpLACqzxwuvq4f.jpg',
       doctorName: 'Deborah Angle',
       doctorSpecialist: 'Cardiologist',
       rating: '3.5',
@@ -110,9 +110,10 @@ class _HomePageViewState extends State<HomePageView> {
   ];
 
   final TextEditingController _doctorSearchController = TextEditingController();
-  final TextEditingController _departmentSearchController = TextEditingController();
+  final TextEditingController _departmentSearchController =
+      TextEditingController();
   final TextEditingController _selectSpecialitySearchController =
-  TextEditingController();
+      TextEditingController();
 
   // Sample list of specialities
   final List<String> _specialities = [
@@ -144,7 +145,6 @@ class _HomePageViewState extends State<HomePageView> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-
             /// Custom AppBar
             AnimatedContainer(
               // padding: const EdgeInsets.only(bottom: 18),
@@ -200,11 +200,10 @@ class _HomePageViewState extends State<HomePageView> {
                       ),
                       Padding(
                         padding:
-                        const EdgeInsets.only(left: 14, right: 14, top: 20),
+                            const EdgeInsets.only(left: 14, right: 14, top: 20),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-
                             /// Location Search field
                             Container(
                               // width: getScreenWidth(context) / 1.35,
@@ -244,7 +243,7 @@ class _HomePageViewState extends State<HomePageView> {
                               ),
                               child: CommonTextField(
                                 textEditingController:
-                                _departmentSearchController,
+                                    _departmentSearchController,
                                 labeltext: 'Department',
                                 onClickButton: (val) {},
                               ),
@@ -269,8 +268,10 @@ class _HomePageViewState extends State<HomePageView> {
                                     textAlign: TextAlign.left,
                                     textAlignVertical: TextAlignVertical.center,
                                     decoration: InputDecoration(
-                                      floatingLabelBehavior: FloatingLabelBehavior.never,
-                                      contentPadding: const EdgeInsets.only(left: 10, right: 10, bottom: 14),
+                                      floatingLabelBehavior:
+                                          FloatingLabelBehavior.never,
+                                      contentPadding: const EdgeInsets.only(
+                                          left: 10, right: 10, bottom: 14),
                                       focusedBorder: OutlineInputBorder(
                                         borderRadius: BorderRadius.circular(8),
                                         borderSide: const BorderSide(
@@ -286,14 +287,15 @@ class _HomePageViewState extends State<HomePageView> {
                                         ),
                                       ),
                                       labelText: 'Select Speciality',
-                                      labelStyle: const TextStyle(fontWeight: FontWeight.normal, fontSize: 13),
+                                      labelStyle: const TextStyle(
+                                          fontWeight: FontWeight.normal,
+                                          fontSize: 13),
                                     ),
                                   );
                                 },
                                 suggestionsCallback: (pattern) {
                                   return _specialities
-                                      .where((speciality) =>
-                                      speciality
+                                      .where((speciality) => speciality
                                           .toLowerCase()
                                           .contains(pattern.toLowerCase()))
                                       .toList();
@@ -310,7 +312,6 @@ class _HomePageViewState extends State<HomePageView> {
                                 },
                                 hideOnEmpty: true,
                                 hideOnError: true,
-
                                 onSelected: (String value) {
                                   _selectSpecialitySearchController.text =
                                       value;
@@ -337,21 +338,23 @@ class _HomePageViewState extends State<HomePageView> {
                               buttonText: 'Search',
                               onPressed: () {
                                 if (_doctorSearchController.text != "" &&
-                                    _selectSpecialitySearchController.text.isNotEmpty) {
+                                    _selectSpecialitySearchController
+                                        .text.isNotEmpty) {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) =>
-                                            SearchPageView(
-                                              placeName:
+                                        builder: (context) => SearchPageView(
+                                          placeName:
                                               _doctorSearchController.text,
-                                              specialist: _selectSpecialitySearchController.text,
-                                            ),
+                                          specialist:
+                                              _selectSpecialitySearchController
+                                                  .text,
+                                        ),
                                       ));
                                 } else {
                                   var snackBar = const SnackBar(
                                       content:
-                                      Text('Please select specialist'));
+                                          Text('Please select specialist'));
                                   ScaffoldMessenger.of(context)
                                       .showSnackBar(snackBar);
                                 }

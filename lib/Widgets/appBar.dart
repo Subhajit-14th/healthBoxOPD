@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:health_box_opd/Common/appColor.dart';
-import 'package:health_box_opd/Common/commonFun.dart';
-import 'package:health_box_opd/Widgets/commonTextField.dart';
+import 'package:health_box_opd/utils/appColor.dart';
+import 'package:health_box_opd/utils/commonFun.dart';
+import 'package:health_box_opd/widgets/commonTextField.dart';
 
 PreferredSizeWidget appBarHome(
     BuildContext context, String text, int notificationTotal) {

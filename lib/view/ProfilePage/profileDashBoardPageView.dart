@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:health_box_opd/model/allMedicalRecordsItemsModel.dart';
-import 'package:health_box_opd/model/currentStatusItemsModel.dart';
+import 'package:health_box_opd/models/allMedicalRecordsItemsModel.dart';
+import 'package:health_box_opd/models/currentStatusItemsModel.dart';
 
 class ProfileDashBoardPageView extends StatefulWidget {
   const ProfileDashBoardPageView({super.key});
@@ -64,42 +64,50 @@ class _ProfileDashBoardPageViewState extends State<ProfileDashBoardPageView> {
   List<AllMedicalRecordsModel> allMedicalRecordsItems = [
     AllMedicalRecordsModel(
       allMedicalRecordsItemsName: 'Heart Rate Status',
-      allMedicalRecordsItemsImage: 'assets/app_items_logo/all_medical_records_heart-rate.png',
+      allMedicalRecordsItemsImage:
+          'assets/app_items_logo/all_medical_records_heart-rate.png',
       boxColor: const Color(0xFF6a5dee),
     ),
     AllMedicalRecordsModel(
       allMedicalRecordsItemsName: 'Body Temperature Status',
-      allMedicalRecordsItemsImage: 'assets/app_items_logo/all_medical_records_medical.png',
+      allMedicalRecordsItemsImage:
+          'assets/app_items_logo/all_medical_records_medical.png',
       boxColor: const Color(0xFFfe9286),
     ),
     AllMedicalRecordsModel(
       allMedicalRecordsItemsName: 'Glucose Level Status',
-      allMedicalRecordsItemsImage: 'assets/app_items_logo/all_medical_records_glucose-meter.png',
+      allMedicalRecordsItemsImage:
+          'assets/app_items_logo/all_medical_records_glucose-meter.png',
       boxColor: const Color(0xFF8ec4ff),
     ),
     AllMedicalRecordsModel(
       allMedicalRecordsItemsName: 'Blood Pressure Status',
-      allMedicalRecordsItemsImage: 'assets/app_items_logo/all_medical_records_blood-pressure.png',
+      allMedicalRecordsItemsImage:
+          'assets/app_items_logo/all_medical_records_blood-pressure.png',
       boxColor: const Color(0xFFffa775),
     ),
     AllMedicalRecordsModel(
       allMedicalRecordsItemsName: 'BMI Status',
-      allMedicalRecordsItemsImage: 'assets/app_items_logo/all-medical_records_bathroom-scale.png',
+      allMedicalRecordsItemsImage:
+          'assets/app_items_logo/all-medical_records_bathroom-scale.png',
       boxColor: const Color(0xFF6a5dee),
     ),
     AllMedicalRecordsModel(
       allMedicalRecordsItemsName: 'FBC Status',
-      allMedicalRecordsItemsImage: 'assets/app_items_logo/all_medical_records_blood-count-test.png',
+      allMedicalRecordsItemsImage:
+          'assets/app_items_logo/all_medical_records_blood-count-test.png',
       boxColor: const Color(0xFFfe9286),
     ),
     AllMedicalRecordsModel(
       allMedicalRecordsItemsName: 'Body Weight Status',
-      allMedicalRecordsItemsImage: 'assets/app_items_logo/all_medical_records_weight-management.png',
+      allMedicalRecordsItemsImage:
+          'assets/app_items_logo/all_medical_records_weight-management.png',
       boxColor: const Color(0xFF8ec4ff),
     ),
     AllMedicalRecordsModel(
       allMedicalRecordsItemsName: 'Pulse Rate Status',
-      allMedicalRecordsItemsImage: 'assets/app_items_logo/all_medical_records_heart-beat.png',
+      allMedicalRecordsItemsImage:
+          'assets/app_items_logo/all_medical_records_heart-beat.png',
       boxColor: const Color(0xFFffa775),
     ),
   ];
@@ -164,8 +172,10 @@ class _ProfileDashBoardPageViewState extends State<ProfileDashBoardPageView> {
               // padding: const EdgeInsets.only(bottom: 16),
               itemBuilder: (context, index) {
                 return showAllMedicalRecordsWidget(
-                  allMedicalRecordsItemsName: allMedicalRecordsItems[index].allMedicalRecordsItemsName,
-                  allMedicalRecordsItemsImage: allMedicalRecordsItems[index].allMedicalRecordsItemsImage,
+                  allMedicalRecordsItemsName:
+                      allMedicalRecordsItems[index].allMedicalRecordsItemsName,
+                  allMedicalRecordsItemsImage:
+                      allMedicalRecordsItems[index].allMedicalRecordsItemsImage,
                   boxColor: allMedicalRecordsItems[index].boxColor,
                 );
               },
@@ -241,7 +251,8 @@ class _ProfileDashBoardPageViewState extends State<ProfileDashBoardPageView> {
   /// All Medical Records Widget
   Widget showAllMedicalRecordsWidget(
       {required String allMedicalRecordsItemsName,
-      required String allMedicalRecordsItemsImage, required Color boxColor}) {
+      required String allMedicalRecordsItemsImage,
+      required Color boxColor}) {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.only(top: 20, bottom: 20),
@@ -265,7 +276,8 @@ class _ProfileDashBoardPageViewState extends State<ProfileDashBoardPageView> {
             ),
           ),
           const SizedBox(height: 16),
-          Image.asset(allMedicalRecordsItemsImage, height: 50, width: 50, fit: BoxFit.fill),
+          Image.asset(allMedicalRecordsItemsImage,
+              height: 50, width: 50, fit: BoxFit.fill),
         ],
       ),
     );

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:health_box_opd/Common/appColor.dart';
-import 'package:health_box_opd/Common/commonFun.dart';
-import 'package:health_box_opd/Widgets/aboutLatestBlogWidget.dart';
-import 'package:health_box_opd/model/topDoctorDummyModel.dart';
+import 'package:health_box_opd/utils/appColor.dart';
+import 'package:health_box_opd/utils/commonFun.dart';
+import 'package:health_box_opd/widgets/aboutLatestBlogWidget.dart';
+import 'package:health_box_opd/models/topDoctorDummyModel.dart';
 
-import '../../Widgets/aboutJustForYouWidget.dart';
+import '../../widgets/aboutJustForYouWidget.dart';
 
 class AboutPageView extends StatefulWidget {
   const AboutPageView({super.key});
@@ -17,7 +17,7 @@ class _AboutPageViewState extends State<AboutPageView> {
   List<TopDoctorModel> doctorDetails = [
     TopDoctorModel(
       image:
-      'https://media.istockphoto.com/id/177373093/photo/indian-male-doctor.jpg?s=612x612&w=0&k=20&c=5FkfKdCYERkAg65cQtdqeO_D0JMv6vrEdPw3mX1Lkfg=',
+          'https://media.istockphoto.com/id/177373093/photo/indian-male-doctor.jpg?s=612x612&w=0&k=20&c=5FkfKdCYERkAg65cQtdqeO_D0JMv6vrEdPw3mX1Lkfg=',
       doctorName: 'Darren Elder',
       doctorSpecialist: 'Surgery',
       rating: '4.0',
@@ -26,7 +26,7 @@ class _AboutPageViewState extends State<AboutPageView> {
     ),
     TopDoctorModel(
       image:
-      'https://i.pinimg.com/736x/b9/97/a5/b997a530822d0f2c03259070d4590d45.jpg',
+          'https://i.pinimg.com/736x/b9/97/a5/b997a530822d0f2c03259070d4590d45.jpg',
       doctorName: 'Ruby Perrin',
       doctorSpecialist: 'Cardiologist',
       rating: '5.0',
@@ -35,7 +35,7 @@ class _AboutPageViewState extends State<AboutPageView> {
     ),
     TopDoctorModel(
       image:
-      'https://t3.ftcdn.net/jpg/06/48/69/42/360_F_648694278_haC94bdL26EedqLMIbMpLACqzxwuvq4f.jpg',
+          'https://t3.ftcdn.net/jpg/06/48/69/42/360_F_648694278_haC94bdL26EedqLMIbMpLACqzxwuvq4f.jpg',
       doctorName: 'Deborah Angle',
       doctorSpecialist: 'Cardiologist',
       rating: '3.5',
@@ -43,7 +43,6 @@ class _AboutPageViewState extends State<AboutPageView> {
       closeTime: '5:00 PM',
     ),
   ];
-
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +77,7 @@ class _AboutPageViewState extends State<AboutPageView> {
           ),
         ],
       ),
-      body:  Column(
+      body: Column(
         children: [
           /// heading text about
           const Padding(
@@ -98,6 +97,7 @@ class _AboutPageViewState extends State<AboutPageView> {
             ),
           ),
           const SizedBox(height: 16),
+
           /// Latest blog listview
           SizedBox(
             height: 150,
@@ -105,12 +105,13 @@ class _AboutPageViewState extends State<AboutPageView> {
             child: ListView.builder(
               itemCount: 10,
               shrinkWrap: true,
-              padding: const EdgeInsets.only(left: 24,right: 24),
+              padding: const EdgeInsets.only(left: 24, right: 24),
               scrollDirection: Axis.horizontal,
               physics: const BouncingScrollPhysics(),
               itemBuilder: (context, index) {
                 return const AboutLatestBlogWidget();
-            },),
+              },
+            ),
           ),
 
           /// About just for you row
@@ -138,6 +139,7 @@ class _AboutPageViewState extends State<AboutPageView> {
               ],
             ),
           ),
+
           /// About just for you Listview
           Expanded(
             child: ListView.builder(

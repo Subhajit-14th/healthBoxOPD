@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:health_box_opd/Common/appColor.dart';
+import 'package:health_box_opd/utils/appColor.dart';
 
 class SpecialititesWidget extends StatefulWidget {
   final String? name;

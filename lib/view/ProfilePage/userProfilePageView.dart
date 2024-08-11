@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:health_box_opd/Common/appColor.dart';
+import 'package:health_box_opd/utils/appColor.dart';
 import 'package:health_box_opd/view/ProfilePage/changePaswordPageView.dart';
 import 'package:health_box_opd/view/ProfilePage/profileDashBoardPageView.dart';
 import 'package:health_box_opd/view/ProfilePage/profileSettingsPageView.dart';

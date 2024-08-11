@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:health_box_opd/Common/appColor.dart';
+import 'package:health_box_opd/utils/appColor.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class TermsAndConditionPageView extends StatefulWidget {

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:health_box_opd/services/auth_services.dart';
+import 'package:health_box_opd/services/router_services.dart';
 import 'package:health_box_opd/view/screenRoot.dart';
 import 'dart:developer';
 
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:provider/provider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,13 +28,21 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const RootScreen(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<AuthServices>(create: (_) => AuthServices()),
+        Provider<RouterServices>(create: (_) => RouterServices()),
+      ],
+      child: Consumer(builder: (context, RouterServices routerServices, _) {
+        return MaterialApp.router(
+          debugShowCheckedModeBanner: false,
+          title: 'Health Box OPD',
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+          ),
+          routerConfig: routerServices.goRouter,
+        );
+      }),
     );
   }
 }

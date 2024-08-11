@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:health_box_opd/Widgets/commonButton.dart';
-import 'package:health_box_opd/Widgets/commonTextField.dart';
+import 'package:health_box_opd/widgets/commonButton.dart';
+import 'package:health_box_opd/widgets/commonTextField.dart';
 
 class ChangePasswordPageView extends StatefulWidget {
   const ChangePasswordPageView({super.key});
@@ -12,8 +12,8 @@ class ChangePasswordPageView extends StatefulWidget {
 class _ChangePasswordPageViewState extends State<ChangePasswordPageView> {
   final TextEditingController _oldPasswordController = TextEditingController();
   final TextEditingController _newPasswordController = TextEditingController();
-  final TextEditingController _confirmPasswordController = TextEditingController();
-
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {

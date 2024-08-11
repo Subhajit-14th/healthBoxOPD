@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:health_box_opd/Common/appColor.dart';
+import 'package:health_box_opd/utils/appColor.dart';
 
 class TopDoctorWidget extends StatefulWidget {
   final String doctorImage;
@@ -27,7 +27,7 @@ class _TopDoctorWidgetState extends State<TopDoctorWidget> {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(bottom: 16),
-      padding: const EdgeInsets.only(left: 14, right: 14, top: 14,bottom: 14),
+      padding: const EdgeInsets.only(left: 14, right: 14, top: 14, bottom: 14),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(14),
@@ -43,7 +43,12 @@ class _TopDoctorWidgetState extends State<TopDoctorWidget> {
         children: [
           Expanded(
               flex: 1,
-              child: Image.network(widget.doctorImage,height: 110,width: 90, fit: BoxFit.fill,)),
+              child: Image.network(
+                widget.doctorImage,
+                height: 110,
+                width: 90,
+                fit: BoxFit.fill,
+              )),
           const SizedBox(width: 14),
           Expanded(
             flex: 2,
@@ -60,6 +65,7 @@ class _TopDoctorWidgetState extends State<TopDoctorWidget> {
                   ),
                 ),
                 const SizedBox(height: 4),
+
                 /// Doctor specialist
                 Text(
                   widget.doctorSpecialist,
@@ -70,6 +76,7 @@ class _TopDoctorWidgetState extends State<TopDoctorWidget> {
                   ),
                 ),
                 const SizedBox(height: 4),
+
                 /// Tap for details text
                 const Text(
                   'Tap For More Details',
@@ -80,6 +87,7 @@ class _TopDoctorWidgetState extends State<TopDoctorWidget> {
                   ),
                 ),
                 const SizedBox(height: 4),
+
                 /// Rating and time
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

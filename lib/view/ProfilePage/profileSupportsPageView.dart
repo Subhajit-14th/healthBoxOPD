@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:health_box_opd/Widgets/commonButton.dart';
-import 'package:health_box_opd/model/openTicketsModel.dart';
+import 'package:health_box_opd/widgets/commonButton.dart';
+import 'package:health_box_opd/models/openTicketsModel.dart';
 import 'package:health_box_opd/view/ProfilePage/OpenTicketDialog/openTicketPageView.dart';
 import 'package:intl/intl.dart';
 
@@ -47,11 +47,10 @@ class _ProfileSupportsPageViewState extends State<ProfileSupportsPageView> {
                               OpenTicketsModel(
                                   details: details,
                                   openedOn: formatDate(DateTime.now()),
-                                  lastUpdated: lastUpdatedFormatDateTime(DateTime.now())),
+                                  lastUpdated: lastUpdatedFormatDateTime(
+                                      DateTime.now())),
                             );
-                            setState(() {
-
-                            });
+                            setState(() {});
                           },
                         );
                       },
@@ -121,7 +120,7 @@ class _ProfileSupportsPageViewState extends State<ProfileSupportsPageView> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                       Text(
+                      Text(
                         '${index + 1}',
                         style: const TextStyle(
                           fontSize: 20,
@@ -129,7 +128,7 @@ class _ProfileSupportsPageViewState extends State<ProfileSupportsPageView> {
                         ),
                       ),
                       SizedBox(width: MediaQuery.of(context).size.width * 0.1),
-                       Text(
+                      Text(
                         openTicketsList[index].details,
                         style: const TextStyle(
                           fontSize: 20,

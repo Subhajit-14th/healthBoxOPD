@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:health_box_opd/Common/appColor.dart';
-import 'package:health_box_opd/Common/commonFun.dart';
+import 'package:health_box_opd/utils/appColor.dart';
+import 'package:health_box_opd/utils/commonFun.dart';
 
 class ContactUsPageView extends StatefulWidget {
   const ContactUsPageView({super.key});
@@ -87,8 +87,8 @@ class _ContactUsPageViewState extends State<ContactUsPageView> {
             /// Location part
             Container(
               width: getScreenWidth(context),
-              padding:
-                  const EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 16),
+              padding: const EdgeInsets.only(
+                  left: 16, right: 16, top: 16, bottom: 16),
               decoration: BoxDecoration(
                 color: AppColor.appThemeColor.withOpacity(.1),
                 borderRadius: BorderRadius.circular(14),
@@ -127,8 +127,8 @@ class _ContactUsPageViewState extends State<ContactUsPageView> {
             /// Phone number part
             Container(
               width: getScreenWidth(context),
-              padding:
-              const EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 16),
+              padding: const EdgeInsets.only(
+                  left: 16, right: 16, top: 16, bottom: 16),
               decoration: BoxDecoration(
                 color: AppColor.appThemeColor.withOpacity(.1),
                 borderRadius: BorderRadius.circular(14),
@@ -166,8 +166,8 @@ class _ContactUsPageViewState extends State<ContactUsPageView> {
             /// Email part
             Container(
               width: getScreenWidth(context),
-              padding:
-              const EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 16),
+              padding: const EdgeInsets.only(
+                  left: 16, right: 16, top: 16, bottom: 16),
               decoration: BoxDecoration(
                 color: AppColor.appThemeColor.withOpacity(.1),
                 borderRadius: BorderRadius.circular(14),

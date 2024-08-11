@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
-import 'package:health_box_opd/Common/appColor.dart';
-import 'package:health_box_opd/Widgets/commonButton.dart';
-import 'package:health_box_opd/Widgets/commonTextField.dart';
+import 'package:health_box_opd/utils/appColor.dart';
+import 'package:health_box_opd/widgets/commonButton.dart';
+import 'package:health_box_opd/widgets/commonTextField.dart';
 import 'package:intl/intl.dart';
 
 class ProfileSettingsPageView extends StatefulWidget {

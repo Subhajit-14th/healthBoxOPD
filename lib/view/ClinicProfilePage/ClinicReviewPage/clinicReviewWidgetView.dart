@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:health_box_opd/Widgets/star_rating.dart';
+import 'package:health_box_opd/widgets/star_rating.dart';
 
 class ClinicReviewWidgetView extends StatefulWidget {
   const ClinicReviewWidgetView({super.key});
